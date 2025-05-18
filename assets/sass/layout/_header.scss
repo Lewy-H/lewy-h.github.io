@@ -18,13 +18,13 @@
 		width: 100%;
 		z-index: _misc(z-index-base);
 
-		h1 {
+		.logo {
 			@include vendor('transition', (
 				'opacity #{_duration(transition)} ease-in-out',
 				'visibility #{_duration(transition)}'
 			));
 			border-bottom: 0;
-			font-size: 0.8em;
+			margin-top: 0.3em;
 			margin-bottom: 0;
 			opacity: 1;
 			visibility: visible;
@@ -86,11 +86,35 @@
 				opacity: 0;
 				visibility: hidden;
 			}
+
+			.logo {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+
+		@include breakpoint('<=large') {
+			.logo {
+				margin-top:0.3em;
+
+				img{
+					height: 2.6em;
+				}
+			}
 		}
 
 		@include breakpoint('<=small') {
 			height: 2.75em;
 			line-height: 2.75em;
+
+			.logo {
+				margin-top:0.3em;
+
+				img{
+					height: 2em;
+				}
+			}
+			
 
 			nav {
 				top: 0;
